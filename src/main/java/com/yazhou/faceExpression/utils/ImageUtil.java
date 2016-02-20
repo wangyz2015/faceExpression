@@ -2,6 +2,7 @@ package com.yazhou.faceExpression.utils;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
 
 /**
  * Created by root on 12/29/15.

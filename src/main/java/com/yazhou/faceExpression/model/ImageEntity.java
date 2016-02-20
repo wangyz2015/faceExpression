@@ -1,7 +1,5 @@
 package com.yazhou.faceExpression.model;
 
-import java.util.Date;
-
 /**
  * Created by root on 12/29/15.
  */
@@ -19,10 +17,12 @@ public class ImageEntity {
     private long downloadCount;
 
     //每个图片都有创建时间
-    private Date createDate;
+    private long createTime;
 
     //每个图片都有最近更新时间
-    private Date updateDate;
+    private long updateTime;
+
+    private ImageTag imageTag;
 
     public long getId() {
         return id;
@@ -56,19 +56,27 @@ public class ImageEntity {
         this.downloadCount = downloadCount;
     }
 
-    public Date getCreateDate() {
-        return createDate;
+    public long getCreateTime() {
+        return createTime;
     }
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setCreateTime(long createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getUpdateDate() {
-        return updateDate;
+    public long getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdateDate(Date updateDate) {
-        this.updateDate = updateDate;
+    public void setUpdateTime(long updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public ImageTag getImageTag() {
+        return imageTag;
+    }
+
+    public void setImageTag(ImageTag imageTag) {
+        this.imageTag = imageTag;
     }
 }

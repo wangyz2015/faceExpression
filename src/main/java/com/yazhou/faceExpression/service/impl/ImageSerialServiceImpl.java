@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Service
 public class ImageSerialServiceImpl implements ImageSerialService {
-    private static final String ADD_IMAGE_SERIAL_SQL = "insert into image_serial_table(id, create_time, update_time, serial_image, serial_name, priority ) values(?,?,?,?,?,?)";
+    private static final String ADD_IMAGE_SERIAL_SQL = "insert into image_serial_table(id, create_time, update_time, serial_image, serial_name, priority, image_class_id ) values(?,?,?,?,?,?)";
     private static final String DELETE_IMAGE_SERIAL_SQL = "delete form image_serial_table where id = ?";
     private static final String GET_IMAGE_SERIAL_LIST_SQL = "select * from image_serial_table where id = ?";
     @Resource
@@ -30,7 +30,7 @@ public class ImageSerialServiceImpl implements ImageSerialService {
     }
 
     private Object[] generateAddImageSerialParams(ImageSerialEntity serial) {
-        return new Object[]{serial.getId(), serial.getCreateTime(), serial.getUpdateTime(), serial.getSerialImage(), serial.getSerialName(), serial.getPriority()};
+        return new Object[]{serial.getId(), serial.getCreateTime(), serial.getUpdateTime(), serial.getSerialImage(), serial.getSerialName(), serial.getPriority(), serial.getImageClassId()};
     }
 
     public void deleteImageSerial(long serialId) {
@@ -54,6 +54,7 @@ public class ImageSerialServiceImpl implements ImageSerialService {
             imageSerialEntity.setSerialName(rs.getString("serial_name"));
             imageSerialEntity.setPriority(rs.getLong("priority"));
             imageSerialEntity.setUpdateTime(rs.getLong("update_time"));
+            imageSerialEntity.setImageClassId(rs.getLong("image_class_id"));
             return imageSerialEntity;
         }
     }

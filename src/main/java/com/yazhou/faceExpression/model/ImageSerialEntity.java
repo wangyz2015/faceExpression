@@ -24,6 +24,9 @@ public class ImageSerialEntity {
     //每个系列都有一个招牌图片
     private String serialImage;
 
+    //所属分类id
+    private long imageClassId;
+
     public ImageSerialEntity() {}
 
     public ImageSerialEntity(long id, String serialName, long priority, long createTime, long updateTime) {
@@ -80,5 +83,13 @@ public class ImageSerialEntity {
 
     public void setSerialImage(String serialImage) {
         this.serialImage = serialImage;
+    }
+
+    public long getImageClassId() {
+        return imageClassId;
+    }
+
+    public void setImageClassId(long imageClassId) {
+        this.imageClassId = imageClassId;
     }
 }
